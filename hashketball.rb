@@ -169,3 +169,16 @@ def player_numbers(team)
   end
   return player_number_array
 end
+
+def player_stats(player)
+  game_hash[:home][:players].each {|player, stats|
+    if player == player_name
+      return stats
+    end
+  }
+  game_hash[:away][:players].each {|player, stats|
+    if player == player_name
+      return stats
+    end
+  }
+end
