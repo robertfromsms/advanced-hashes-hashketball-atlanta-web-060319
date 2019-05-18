@@ -155,3 +155,16 @@ def team_names
   answer.push(game_hash[:away][:team_name])
   return answer
 end
+
+def player_numbers(team)
+  player_number_array = []
+  if game_hash[:home][:team_name] == team
+    game_hash[:home][:players].each {|player, stats|
+      player_number_array.push(stats[:number])
+    }
+  elsif game_hash[:away][:team_name] == team
+    game_hash[:away][:players].each {|player, stats|
+      player_number_array.push(stats[:number])
+  end
+  return player_number_array
+end
