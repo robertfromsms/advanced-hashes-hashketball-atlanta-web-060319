@@ -148,3 +148,10 @@ def team_colors(team)
     return game_hash[:away][:colors]
   end
 end
+
+def team_names
+  answer = []
+  answer.push(game_hash[:home][:team_name])
+  answer.push(game_hash[:away][:team_name])
+  return answer
+end
