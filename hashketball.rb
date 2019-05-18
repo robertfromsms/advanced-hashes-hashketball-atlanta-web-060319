@@ -165,6 +165,7 @@ def player_numbers(team)
   elsif game_hash[:away][:team_name] == team
     game_hash[:away][:players].each {|player, stats|
       player_number_array.push(stats[:number])
+    }
   end
   return player_number_array
 end
