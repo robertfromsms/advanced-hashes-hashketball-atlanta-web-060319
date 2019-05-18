@@ -170,7 +170,7 @@ def player_numbers(team)
   return player_number_array
 end
 
-def player_stats(player)
+def player_stats(player_name)
   game_hash[:home][:players].each {|player, stats|
     if player == player_name
       return stats
