@@ -182,3 +182,24 @@ def player_stats(player_name)
     end
   }
 end
+
+def big_shoe_rebounds
+  player_shoe_array = []
+  game_hash[:home][:players].each {|player, stats|
+    player_shoe_array.push(stats[:shoe])    
+  }
+  game_hash[:away][:players].each {|player, stats|
+    player_shoe_array.push(stats[:shoe])
+  }
+  max = player_shoe_array.max
+  game_hash[:home][:players].each {|player, stats|
+    if stats[:shoe] == max
+      return stats[:rebounds]
+    end    
+  }
+  game_hash[:away][:players].each {|player, stats|
+    if stats[:shoe] == max
+      return stats[:rebounds]
+    end
+  }
+end
